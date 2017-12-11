@@ -1,0 +1,25 @@
+
+<div style="width: 200px; height:200px;"  ng-cloak="" layout-gt-sm="row" layout="column" class="listdemoBasicUsage">
+
+<div flex-gt-sm="260" flex>
+	<md-toolbar layout="row" class="md-hue-3">
+	  <div class="md-toolbar-tools">
+	    <span>Tables</span>
+	  </div>
+	</md-toolbar>
+
+  <md-content>
+    <md-list flex>
+      <md-list-item class="md-3-line" ng-repeat="tableName in tableShelfCtrl.tableList" ng-click="tableShelfCtrl.clickTable(tableName)">
+        <div class="md-list-item-text" layout="column">
+          <h3>{{ tableName }}</h3>
+        </div>
+      </md-list-item>
+		</md-list>
+    
+		<md-button class="md-primary md-raised" ng-click="showAddTable($event)">
+      Add Table
+    </md-button>
+	</md-content>
+</div>
+</div>

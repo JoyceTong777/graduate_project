@@ -1,0 +1,36 @@
+<md-dialog>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Add a New Table</h2>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <md-content class="add-table-dialog">
+        <div style="margin: 10px 20px 10px 20px;">
+          <p>Upload a file. Currently supports csv files.</p>
+          <p>Select local CSV File:</p>
+          <input id="csvUpload" type="file" name="newTableName">
+        </div>
+      </md-content>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-click="addTableDialogCtrl.cancel()" >
+        Cancel
+      </md-button>
+      <md-button ng-click="addTableDialogCtrl.apply()" style="margin-right:20px;" >
+        Apply
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
+
+<style>
+.add-table-dialog {
+  width:800px;
+  height:400px;
+}
+</style>

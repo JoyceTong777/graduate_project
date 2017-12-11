@@ -1,0 +1,26 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+      	<button type="button" class="btn btn-success" ng-click="tableDivCtrl.startEditing()" ng-show="!tableDivCtrl.isEditing && tableDivCtrl.dataService_.curTableObj.name !== undefined">Edit</button>
+      	<button type="button" class="btn btn-danger" ng-click="tableDivCtrl.applyEdits()" ng-show="tableDivCtrl.isEditing && tableDivCtrl.dataService_.curTableObj.name !== undefined">Apply</button>
+      </th>
+      <th ng-repeat="header in tableDivCtrl.header"> 
+      	{{header.value}}
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr ng-repeat="rowData in tableDivCtrl.bodyData">
+    	<th scope="row">
+    	{{$index + 1}}</th>
+    	<td ng-repeat="cellData in rowData" ng-click="tableDivCtrl.click(cellData)" style="background-color:{{cellData.backgroundColor}};">
+    		<input type="text" ng-model="cellData.value" ng-show="tableDivCtrl.isEditing"/>
+    		<span ng-show="!tableDivCtrl.isEditing">{{cellData.value}}</span>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+

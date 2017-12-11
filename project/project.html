@@ -1,0 +1,25 @@
+<div style="height:100%;">
+  <div style=" height:calc(100% - 20px);float:left;width:200px;padding:5px;margin:7px;" class="md-whiteframe-5dp">
+    <table-shelf style=""></table-shelf>
+  </div>
+
+
+  <div style="float:left; height:calc(100% - 30px);width:calc(100% - 270px);">
+    <div class="md-whiteframe-5dp" 
+        style="height:40%;width:100%;margin:7px;"> 
+        <h1 style="height:50px;float:left;">Table Name: {{projectCtrl.name}}</h1>
+        <div style="float:left;">
+      <md-progress-circular md-mode="indeterminate" ng-show="projectCtrl.dataService_.isQueryingTable"></md-progress-circular >
+        </div>
+        <button type="button" class="btn btn-info" ng-click="projectCtrl.download()" style="margin: 10px 0 0 10px;" ng-show="projectCtrl.dataService_.curTableObj.name !== undefined">Download Table</button>
+        
+      <chart>
+      </chart>
+    </div>
+
+    <div class="md-whiteframe-5dp" style="height:60%;width:100%;margin:7px;padding:10px;overflow-y:scroll;">
+      <table-div>
+      </table-div>
+    </div>
+  </div>
+</div>
